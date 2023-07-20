@@ -9,3 +9,5 @@ Used:
 MediatR,
 AutoMapper,
 for frontend used bootstrap and Javascript.
+
+PS. It is not finished, I`ll work to improve it.
