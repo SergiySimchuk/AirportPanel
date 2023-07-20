@@ -1,0 +1,41 @@
+﻿CREATE VIEW [dbo].[FlightsDataView]
+	AS SELECT Flights.Id as ID
+	, Flights.FlightNumber as FlightNumber
+	, Flights.DepartureDateTime as DepartureDateTime
+	, Flights.ArrivalDateTime as ArrivalDateTime
+	, Flights.DepartureAirportID as DepartureAirportID
+	, DepartureAirports.[Name] as DepartureAirport
+	, DepartureAirports.City as DepartureCity
+	, DepartureAirports.Country as DepartureCountry
+	, Flights.ArrivalAirportID as ArrivalAirportID
+	, ArrivalAirports.[Name] as ArrivalAirport
+	, ArrivalAirports.City as ArrivalCity
+	, ArrivalAirports.Country as ArrivalCountry
+	, Flights.DepartureTerminalID as DepartureTerminalID
+	, TerminalsDeparture.[Name] as DepartureTerminal
+	, Flights.DepartureGateID as DepartureGateID
+	, GatesDeparture.[Name] as DepartureGate
+	, Flights.ArrivalTerminalID as ArrivalTerminalID
+	, TerminalsArrival.[Name] as ArrivalTerminal
+	, Flights.ArrivalGateID as ArrivalGateID
+	, GatesArrival.[Name] as ArrivalGate
+	--, Flights.FlightStatus as StatusID
+	, 0 as StatusID
+	--, Statuses.[Name] as FlightStatus
+	, '' as FlightStatus
+
+	FROM [Flights] as Flights
+		join [Airports] as DepartureAirports
+			on Flights.DepartureAirportID = DepartureAirports.Id
+		join [Airports] as ArrivalAirports 
+			on Flights.ArrivalAirportID = ArrivalAirports.Id
+		join [Terminals] as TerminalsArrival
+			on Flights.ArrivalTerminalID = TerminalsArrival.Id
+		join [Gates] as GatesArrival 
+			on Flights.ArrivalGateID = GatesArrival.Id
+		join [Terminals] as TerminalsDeparture
+			on Flights.DepartureTerminalID = TerminalsDeparture.Id
+		join [Gates] as GatesDeparture
+			on Flights.DepartureGateID = GatesDeparture.Id
+		--join [FlightStatuses] as Statuses
+			--on Flights.FlightStatus = Statuses.Id

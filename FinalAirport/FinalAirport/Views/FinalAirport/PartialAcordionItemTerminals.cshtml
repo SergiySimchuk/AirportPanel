@@ -1,0 +1,67 @@
+﻿<div class="accordion-item text-light">
+            <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Terminals
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionStaffPage">
+                <div class="accordion-body">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#terminal-add-edit-modal">
+                        Add new terminal
+                    </button>
+
+                    <div class="modal fade bg-dark" id="terminal-add-edit-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Fill the terminal fields</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row" hidden>
+                                        <div class="col-md-4">
+                                            <span>ID</span>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control terminal-id" disabled />
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span>Name</span>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control terminal-name" onkeypress="" />
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span>Airport</span>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <span>
+                                                <select class="form-select" aria-label="Default select example" id="terminal-airports-selection-list">
+                                                    <option selected>Select airport</option>
+                                                </select>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <br />
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" id="save-terminal" data-bs-dismiss="modal" onclick="    saveUpdateTerminalButtonHandler();">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <br />
+                <div id="terminalsTable" class="content"></div>
+            </div>
+        </div>

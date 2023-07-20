@@ -1,0 +1,47 @@
+﻿<!--Modal log in-->
+<div class="modal fade" data-bs-keyboard="true" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" id="login-as-staff-client-modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Staff autorize</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <input type="checkbox" class="form-control user-staff" onkeypress="" hidden value=true />
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <span>User name</span>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control user-name" onkeypress="" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-4">
+                        <span>Password</span>
+                    </div>
+                    <div class="col-md-8" id="userPassword">
+                        <input type="password" class="form-control user-password" />
+                    </div>
+                </div>
+                <br />
+                <div class="row" id="confirm-password-row" hidden>
+                    <div class="col-md-4">
+                        <span>Confirm password</span>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="password" class="form-control user-confirm-password" id="userConfirmPassword" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="action-save btn btn-primary" data-bs-dismiss="modal" id="LoginButton" onclick="    loginButtonHandler();">GO</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--modal log out-->

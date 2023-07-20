@@ -1,0 +1,52 @@
+﻿
+<div class="container-fluid" id="staffPageData">
+    <div class="row">
+        <div class="col-sm-8"></div>
+        <div class="col-sm-1">
+            <button type="button" class="btn btn-secondary" id="add-new-flight" data-bs-toggle="modal" data-bs-target="#flight-add-edit-modal" onclick="changeFlightEditModalElemendtsVision(true);">Add new flight</button>
+        </div>
+        <!--Button-->
+        <div class="col-sm-1"> 
+            <button type="button" class="btn btn-secondary" id="add-new-flight" data-bs-toggle="modal" data-bs-target="#flight-add-edit-modal" onclick="changeFlightEditModalElemendtsVision(false);">Edit flight</button>
+        </div>
+
+       <div class="col-sm-1 text-md-center">
+            <p class="text-md-center" id="current-user-name" onclick="    checkAuthorisation();"></p>
+        </div>
+        <div class="col-sm-1 align-middle">
+            <button type="button" class="btn btn-secondary" id="LogOutButton" onclick="    logOutButtonHandler();">Log out</button>
+        </div>
+    </div>
+
+    <div class="accordion accordion-flush" id="accordionStaffPage">
+        
+        @Html.Partial("PartialAcordionItemAirports")
+        @Html.Partial("PartialAcordionItemTerminals")
+        @Html.Partial("PartialAcordionItemGates")
+        @Html.Partial("PartialAcordionItemFlightStatuses")
+        @Html.Partial("PartialAcordionItemPriceClasses")
+        @Html.Partial("PartialAcordionItemPassengers")
+        @Html.Partial("PartialAcordionItemTickets")
+
+    </div>
+
+</div>
+
+@Html.Partial("PartialLoginModal")
+@Html.Partial("PartialAddFlightModal")
+
+@section Scripts
+    {
+
+    <script>
+
+        $(document).ready(() => {
+
+            AddEventListeners("userPassword", passwordKeyDown);
+            checkAuthorisation();
+        });
+
+    </script>
+
+}
+

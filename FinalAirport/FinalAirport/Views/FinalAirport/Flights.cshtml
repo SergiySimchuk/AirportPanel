@@ -1,0 +1,25 @@
+﻿
+
+<h1>Flights</h1>
+@Html.Partial("PartiaSearchPanel")
+<br />
+<div id="flightsTable" class="content"></div>
+
+@Html.Partial("PartialBuyTicketModal")
+@Html.Partial("PartialLoginModal")
+
+@section Scripts
+    {
+    <script>
+
+        $(document).ready(() => {
+
+            AddEventListeners("userConfirmPassword", passwordKeyDown);
+
+            var FlightTable = new InterFaceTable();
+            FlightTable.loadFlightsPanel();
+            document.cookie = SetCookieValue("previosFlight", 0);
+
+        });
+    </script>
+}
