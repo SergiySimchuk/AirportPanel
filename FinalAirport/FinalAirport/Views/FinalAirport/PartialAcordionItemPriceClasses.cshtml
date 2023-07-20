@@ -1,0 +1,54 @@
+﻿<div class="accordion-item text-light">
+    <h2 class="accordion-header" id="flush-headingFive">
+        <button class="accordion-button collapsed text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFour">
+            Price classes
+        </button>
+    </h2>
+    <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionStaffPage">
+
+        <br />
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#priceClasses-add-edit-modal">
+            Add new price class
+        </button>
+        <br />
+
+    <div class="modal fade bg-dark" id="priceClasses-add-edit-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Fill the price class fields</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row" hidden>
+                        <div class="col-md-4">
+                            <span>ID</span>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control priceClass-id" disabled />
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <span>Name</span>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control priceClass-name" onkeypress="" />
+                        </div>
+                    </div>
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="save-priceClass" data-bs-dismiss="modal" onclick="savePriceClass()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-body">
+        <div id="priceClassesTable" class="content"></div>
+    </div>
+    </div>
+</div>

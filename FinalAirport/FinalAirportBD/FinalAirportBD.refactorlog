@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="b6906f3e-3b4c-4d94-adc3-58e887a31a60" ChangeDateTime="06/19/2022 12:00:10">
+    <Property Name="ElementName" Value="[dbo].[Gates].[Nane]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Gates]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Name" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b2b3dd55-0553-4f5a-82a7-5e2d8f3d59e7" ChangeDateTime="06/19/2022 12:07:33">
+    <Property Name="ElementName" Value="[dbo].[Gates].[terminalID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Gates]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TerminalID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d1f43ab4-50ba-4292-9623-9bbfbc472009" ChangeDateTime="06/19/2022 12:34:42">
+    <Property Name="ElementName" Value="[dbo].[Flights].[DepartureDatTime]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Flights]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DepartureDateTime" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3c5eb261-d0a0-44a4-ac99-3cae083a59d4" ChangeDateTime="06/19/2022 12:38:27">
+    <Property Name="ElementName" Value="[dbo].[Flights].[DeparturePort]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Flights]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DepartureAirport" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3e3be897-1afe-4606-9312-e329ab5a038b" ChangeDateTime="06/19/2022 12:44:49">
+    <Property Name="ElementName" Value="[dbo].[FK_Flights_ToaIRPORTS]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Flights]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Flights_ToAirports]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d7d9c1e8-ebd1-4ae8-92c8-26fd3b7cb003" ChangeDateTime="06/19/2022 12:47:04">
+    <Property Name="ElementName" Value="[dbo].[FK_Flights_ToAirports]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Flights]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Flights_ToAirportsDeparture]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="df7491ed-3776-4296-bfb5-742f540f50f8" ChangeDateTime="06/19/2022 12:47:11">
+    <Property Name="ElementName" Value="[dbo].[FK_Flights_ToAirports]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Flights]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Flights_ToAirportsArrive]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="bdc0438d-6922-4708-9458-b3646fbe7e64" ChangeDateTime="07/19/2022 21:02:44">
+    <Property Name="ElementName" Value="[dbo].[PriceClasses].[Nme]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[PriceClasses]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Name" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b9465c89-f7c3-4698-a5da-b3838fbaa34c" ChangeDateTime="07/19/2022 21:05:50">
+    <Property Name="ElementName" Value="[dbo].[PriceClasses].[SecondsTo]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[PriceClasses]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SecondsFromNow" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d5a8fe21-7f7a-4bd4-af90-f9bc12181b60" ChangeDateTime="07/19/2022 21:16:57">
+    <Property Name="ElementName" Value="[dbo].[FK_PriceList_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[PriceList]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_PriceList_ToPriceClasses]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a6b049a1-33f7-4676-ae64-0cc88266fe4f" ChangeDateTime="07/19/2022 21:17:14">
+    <Property Name="ElementName" Value="[dbo].[FK_PriceList_ToTable_1]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[PriceList]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_PriceList_ToFlights]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f9d9c713-b34f-415d-adf5-fc2fd41670df" ChangeDateTime="07/20/2022 18:52:55">
+    <Property Name="ElementName" Value="[dbo].[FlightStatuses].[Priority]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[FlightStatuses]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SeocondsTo" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="bf83464e-c857-43cc-8e69-abd4d3c147cd" ChangeDateTime="07/20/2022 18:54:27">
+    <Property Name="ElementName" Value="[dbo].[FlightStatuses].[Departure]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[FlightStatuses]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Arrival" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="50a8bece-04b1-46b8-b5fa-0ac6dd0a1b68" ChangeDateTime="07/20/2022 18:54:47">
+    <Property Name="ElementName" Value="[dbo].[FlightStatuses].[SeocondsTo]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[FlightStatuses]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SecondsTo" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c00a198e-b4cb-41a5-a9a5-8c8ac7bf0edf" ChangeDateTime="07/20/2022 20:40:29">
+    <Property Name="ElementName" Value="[dbo].[Flights].[Terminal]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Flights]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ArrivalTerminal" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1aa8cbe8-5e70-4b64-b0c1-9ba5b576a7dc" ChangeDateTime="07/20/2022 20:40:40">
+    <Property Name="ElementName" Value="[dbo].[Flights].[Gate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Flights]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ArrivalGate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ffe52d01-78b8-450c-a33c-7e4d911d793e" ChangeDateTime="07/20/2022 20:41:42">
+    <Property Name="ElementName" Value="[dbo].[Flights].[DepurtureTerminal]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Flights]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DepartureTerminal" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="33253776-c65c-4437-ab77-17c962a5e0d6" ChangeDateTime="07/20/2022 20:41:57">
+    <Property Name="ElementName" Value="[dbo].[Flights].[DeppartureGate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Flights]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DepartureGate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a7b84d3b-89cb-4287-8626-c4c1855e71db" ChangeDateTime="07/20/2022 20:42:40">
+    <Property Name="ElementName" Value="[dbo].[FK_Flights_ToTerminals]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Flights]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Flights_ToTerminals_Arrival]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="50bd359c-aa3d-465e-a4aa-3f0a12225c07" ChangeDateTime="07/20/2022 20:42:48">
+    <Property Name="ElementName" Value="[dbo].[FK_Flights_ToGates]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Flights]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Flights_ToGates_Arrival]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e3253cb4-b40d-45b7-b31c-fd78f7c27cf3" ChangeDateTime="07/24/2022 09:04:42">
+    <Property Name="ElementName" Value="[dbo].[Flights].[DepartureAirport]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Flights]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DepartureAirportID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7c99ef78-d140-4e31-846a-ab79f4338c54" ChangeDateTime="07/24/2022 09:04:49">
+    <Property Name="ElementName" Value="[dbo].[Flights].[ArrivalAirport]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Flights]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ArrivalAirportID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a7e57c5b-0398-4473-92f1-660d29dd999f" ChangeDateTime="07/24/2022 09:04:53">
+    <Property Name="ElementName" Value="[dbo].[Flights].[ArrivalTerminal]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Flights]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ArrivalTerminalID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2704f704-b9d1-4e1a-953e-84d2ad54c79a" ChangeDateTime="07/24/2022 09:04:57">
+    <Property Name="ElementName" Value="[dbo].[Flights].[ArrivalGate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Flights]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ArrivalGateID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="986bd916-94b5-499a-9dda-889251a8e009" ChangeDateTime="07/24/2022 09:05:20">
+    <Property Name="ElementName" Value="[dbo].[Flights].[DepartureTerminal]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Flights]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DepartureTerminalID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6d119c2c-cb61-43a1-8b8d-1b7ead00ff20" ChangeDateTime="07/24/2022 09:05:23">
+    <Property Name="ElementName" Value="[dbo].[Flights].[DepartureGate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Flights]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DepartureGateID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e2c8b08c-826e-4352-adcd-b79b56cbd6f8" ChangeDateTime="05/03/2023 15:41:31">
+    <Property Name="ElementName" Value="[dbo].[JWTTokens].[User]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[JWTTokens]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UserID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c858be9e-9552-4341-85a5-a28148fa0765" ChangeDateTime="05/04/2023 13:58:58">
+    <Property Name="ElementName" Value="[dbo].[JWTTokens].[IPArress]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[JWTTokens]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IPAdress" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d2e03b13-105b-4795-bb2e-b1ee08455194" ChangeDateTime="05/05/2023 11:31:23">
+    <Property Name="ElementName" Value="[dbo].[JWTTokens].[Creadet]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[JWTTokens]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Created" />
+  </Operation>
+</Operations>

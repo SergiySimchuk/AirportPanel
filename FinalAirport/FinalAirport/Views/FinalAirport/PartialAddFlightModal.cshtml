@@ -1,0 +1,150 @@
+﻿<!--Modal-->
+<div class="modal fade bg-dark modal-fullscreen" id="flight-add-edit-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <!--modal-header-->
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Fill the flight fields</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!--modal-header-->
+            <!--modal-body-->
+            <div class="modal-body">
+                <!--row-->
+                <div class="row" hidden>
+                    <div class="col-md-4">
+                        <span>ID</span>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control flight-id" disabled />
+                    </div>
+                </div>
+                <div class="row" hidden id="flight-selection-row">
+                    <div class="col-md-2">
+                        <span>Flight</span>
+                    </div>
+                    <div class="col-md-10">
+                        <span>
+                            <select class="form-select" aria-label="Default select example" id="flights-selection-list" onchange="changeFlightslsList('flights-selection-list', this.value);">
+                                <option selected>Select Airport</option>
+                            </select>
+                        </span>
+                    </div>
+                </div>
+                <!--row-->
+                <br />
+                <!--row-->
+                <div class="row">
+                    <div class="col-md-2">
+                        <span>Flight number</span>
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control flight-number" onkeypress="" />
+                    </div>
+                </div>
+                <!--row-->
+                <br />
+                <!--row-->
+                <div class="row text-center">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5">Departure</div>
+                    <div class="col-md-5">Arrival</div>
+                </div>
+                <!--row-->
+                <br />
+                <!--row-->
+                <div class="row">
+                    <div class="col-md-2">
+                        <span>Date/time</span>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="datetime-local" class="form-control departure-date" />
+                    </div>
+                    <div class="col-md-5">
+                        <input type="datetime-local" class="form-control arrival-date" />
+                    </div>
+                </div>
+                <!--row-->
+                <br />
+                <!--row-->
+                <div class="row">
+                    <div class="col-md-2">
+                        <span>Airport</span>
+                    </div>
+                    <div class="col-md-5">
+                        <span>
+                            <select class="form-select" aria-label="Default select example" id="flight-departure-airport-selection-list" onchange="changeTerminalsList('flight-departure-terminal-selection-list',this.value);">
+                                <option selected>Select Airport</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="col-md-5">
+                        <span>
+                            <select class="form-select" aria-label="Default select example" id="flight-arrival-airport-selection-list" onchange="changeTerminalsList('flight-arrival-terminal-selection-list', this.value);">
+                                <option selected>Select Airport</option>
+                            </select>
+                        </span>
+                    </div>
+                </div>
+                <!--row-->
+                <br />
+                <!--row-->
+                <div class="row">
+                    <div class="col-md-2">
+                        <span>Terminal</span>
+                    </div>
+                    <div class="col-md-5">
+                        <span>
+                            <select class="form-select" aria-label="Default select example" id="flight-departure-terminal-selection-list" onchange="changeGatesList('flight-departure-gate-selection-list', this.value);">
+                                <option selected>Select terminal</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="col-md-5">
+                        <span>
+                            <select class="form-select" aria-label="Default select example" id="flight-arrival-terminal-selection-list" onchange="changeGatesList('flight-arrival-gate-selection-list', this.value);">
+                                <option selected>Select terminal</option>
+                            </select>
+                        </span>
+                    </div>
+                </div>
+                <!--row-->
+                <br />
+                <!--row-->
+                <div class="row">
+                    <div class="col-md-2">
+                        <span>Gate</span>
+                    </div>
+                    <div class="col-md-5">
+                        <span>
+                            <select class="form-select" aria-label="Default select example" id="flight-departure-gate-selection-list">
+                                <option selected>Select gate</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="col-md-5">
+                        <span>
+                            <select class="form-select" aria-label="Default select example" id="flight-arrival-gate-selection-list">
+                                <option selected>Select gate</option>
+                            </select>
+                        </span>
+                    </div>
+                </div>
+                <!--row-->
+                <br />
+                <div id="price-list-block" hidden>
+                    @Html.Partial("PartialAddEditPriceModal")
+                </div>
+            </div>
+            <!--modal-body-->
+            <!--modal-footer-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="remove-flight" data-bs-dismiss="modal" onclick="removeFlight();" hidden>Remove</button>
+                <button type="button" class="btn btn-primary" id="save-flight" data-bs-dismiss="modal" onclick="saveFlight();">Save changes</button>
+            </div>
+            <!--modal-footer-->
+        </div> <!--modal-content-->
+    </div> <!--modal-dialog-->
+</div> <!--Modal-->
+<!--modal add flight -->

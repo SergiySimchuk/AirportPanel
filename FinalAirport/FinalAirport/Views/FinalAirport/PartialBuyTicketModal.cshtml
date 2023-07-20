@@ -1,0 +1,149 @@
+﻿<!--Modal log in-->
+<div class="modal fade" data-bs-keyboard="true" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" id="buy-ticket-modal" aria-hidden="true">
+    <div class="modal-dialog  modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Buy tickets</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <span>Flight</span>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control flight-id" hidden />
+                        <input type="text" class="form-control flight" disabled />
+                    </div>
+                    <div class="col-md-2">
+                        <span>Tickets count</span>
+                    </div>
+                    <div class="col-md-1">
+                        <input type="number" class="form-control tickets-count" min="1" disabled />
+                        <input type="number" class="form-control tickets-counter" min="0" hidden />
+                    </div>
+                    <div class="col-md-3">
+
+                        <button type="button" class="btn btn-primary" id="login-client-button" onclick="loginClient();">Login</button>
+                        <button type="button" class="btn btn-primary" id="log-out-button" onclick="logOutClient();">Logout</button>
+                        <button type="button" class="btn btn-primary" id="registr-new-client-button" onclick="registrationNewClient();">Register</button>
+
+                        <label id="current-user-name">Not authorised</label>
+                    </div>
+                </div>
+                <br />
+                <div class="row justify-content-start">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-primary" id="add-ticket-button" onclick="addTicket();">Add ticket</button>
+                        <button type="button" class="btn btn-primary" @*data-bs-dismiss="modal"*@ id="save-buy-tickets" onclick="    saveBoughtTickets();">Save</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                </br>
+                <!--ticket block-->
+                <form class="container" id="tickets-container">
+                    <fieldset id="ticket-block-template" class="border border-white-4 border-info ticket-block" hidden>
+                        <div hidden>
+                            <input type="text" class="form-control passenger-id" id="passenger-id-template" />
+                        </div>
+                        </br>
+                        <div class="row justify-content-start">
+                            <div class="col-md-2">
+                                <label id="ticket-header">Ticket template</label>
+                            </div>
+                            <div class="col-sm-2">
+                                My passengers
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-select ticket-my-passengers-list" aria-label="Default select example" ticketBlockID="ticket-block-template" id="ticket-my-passengers-list-template" hidden onchange="onPassengerSelect(this, this.value)">
+                                    <option selected>Not selected</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-check save-passenger-check-box" id="save-passenger-column-template" hidden>
+                                    <input class="form-check-input save-passenger-check-box-input" type="checkbox" value="" id="save-passenger-check-box">
+                                    <label class="form-check-label" for="save-passenger-check-box">
+                                        Remember passenger
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-1" ></div>
+                            <div class="col-sm-2">
+                                <button type="button" class="action-save btn btn-primary" id="remove-button-template">Remove</button>
+                            </div>
+                        </div>
+                        </br>
+                        <div class="row">
+                            <div class="col-md-1">
+                                <span>First name</span>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control passenger-first-name" placeholder="First name" req/>
+                            </div>
+                            <div class="col-md-1">
+                                <span>Passport</span>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control passenger-passport" placeholder="Passport" />
+                            </div>
+                            <div class="col-md-1">
+                                <span>Date of birth</span>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="date" class="form-control passenger-date-of-birth" />
+                            </div>
+                        </div>
+                        </br>
+                        <div class="row">
+                            <div class="col-md-1">
+                                <span>Last name</span>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control passenger-last-name" placeholder="Last name" />
+                            </div>
+                            <div class="col-md-1">
+                                <span>Gender</span>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control passenger-gender" placeholder="Gender" />
+                            </div>
+                            <div class="col-md-1">
+                                <span>Nationality</span>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control passenger-nationality" placeholder="Nationality" />
+                            </div>
+                        </div>
+                        </br>
+                        <div class="row">
+                            <div class="col-md-1">
+                                <span>Price</span>
+                            </div>
+                            <div class="col-md-3">
+                                <span>
+                                    <select class="form-select ticket-price-class" aria-label="Default select example" id="ticket-price-list-selection">
+                                        <option selected>Not selected</option>
+                                    </select>
+                                </span>
+                            </div>
+                            <div class="col-md-1">
+                                <span>Row</span>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control row-place" placeholder="row" />
+                            </div>
+                            <div class="col-md-1">
+                                <span>Place</span>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control place-place" placeholder="place" />
+                            </div>
+                        </div>
+                        </br>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

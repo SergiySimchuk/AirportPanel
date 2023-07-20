@@ -1,0 +1,67 @@
+﻿<div class="accordion-item text-light">
+    <h2 class="accordion-header" id="flush-headingThree">
+        <button class="accordion-button collapsed text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Gates
+        </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionStaffPage">
+
+        <br />
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#gate-add-edit-modal">
+            Add new gate
+        </button>
+        <br />
+
+    <div class="modal fade bg-dark" id="gate-add-edit-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Fill the gate fields</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row" hidden>
+                        <div class="col-md-4">
+                            <span>ID</span>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control gate-id" disabled />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <span>Name</span>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control gate-name" onkeypress="" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <span>Terminal</span>
+                        </div>
+                        <div class="col-md-8">
+                            <span>
+                                <select class="form-select" aria-label="Default select example" id="gate-terminal-selection-list">
+                                    <option selected>Select terminal</option>
+                                </select>
+                            </span>
+                        </div>
+                    </div>
+                    <br/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="save-gate" data-bs-dismiss="modal" onclick="    saveUpdateGateButtonHandler();">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-body">
+        <div id="gatesTable" class="content"></div>
+    </div>
+    </div>
+</div>

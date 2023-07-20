@@ -1,0 +1,31 @@
+﻿<div class="accordion-item text-light">
+    <h2 class="accordion-header" id="flush-headingSeven">
+        <button class="accordion-button collapsed text-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+            Tickets
+        </button>
+    </h2>
+    <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-heading" data-bs-parent="#accordionStaffPage">
+        <div class="accordion-body">
+            <div class="row" id="tickets-search-panel">
+                <div class="col-2">
+                    <label for="flight-number-search">Flight number search</label>
+                    <input name="flight-number-search" type="text" class="form-control flight-number-search" placeholder="Flight number search" onchange="    executeSearchTickets();" />
+                </div>
+                <div class="col-2">
+                    <label for="first-name">First name</label>
+                    <input name="first-name-search" type="text" class="form-control first-name-search" placeholder="First name search" onchange="    executeSearchTickets();" />
+                </div>
+                <div class="col-2">
+                    <label for="last-name-search">Last name search</label>
+                    <input name="last-name-search" type="text" class="form-control last-name-search" placeholder="Last name search" onchange="executeSearchTickets();" />
+                </div>
+                <div class="col-2">
+                    <label for="passport-search">Passport search</label>
+                    <input name="passport-search" type="text" class="form-control passport-search" placeholder="Passport search" onchange="executeSearchTickets();" />
+                </div>
+            </div>
+            <br />
+            <div id="ticketsTable" class="content"></div>
+        </div>
+    </div>
+</div>

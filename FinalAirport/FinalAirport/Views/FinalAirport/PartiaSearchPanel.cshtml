@@ -1,0 +1,22 @@
+﻿<div class="row" id="flights-search-panel">
+    <div class="col-2">
+        <label for="flight-number-search" >Flight number search</label>
+        <input name="flight-number-search" type="text" class="form-control flight-number-search" placeholder="Flight number search" onchange="    executeSearchFlight();"/>
+    </div>
+    <div class="col-2">
+        <label for="departure-airport-search" >Departure airport search</label>
+        <input name="departure-airport-search" type="text" class="form-control departure-airport-search" placeholder="Departure airport search" onchange="    executeSearchFlight();"/>
+    </div>
+    <div class="col-2">
+        <label for="arrival-airport-search" >Arrival airport search</label>
+        <input name="arrival-airport-search" type="text" class="form-control arrival-airport-search" placeholder="Arrival airport search" onchange="executeSearchFlight();"/>
+    </div>
+    <div class="col-2">
+        <label for="start-date" >Start date search</label>
+        <input name="start-date-search" type="datetime-local" class="form-control start-date-search" placeholder="Start date search" onchange="executeSearchFlight();"/>
+    </div>
+    <div class="col-2">
+        <label for="end-date" >End date search</label>
+        <input name="end-date-search" type="datetime-local" class="form-control end-date-search" placeholder="End date search" onchange="executeSearchFlight();"/>
+    </div>
+</div>

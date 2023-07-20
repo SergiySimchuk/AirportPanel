@@ -1,0 +1,63 @@
+﻿<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#price-add-edit-modal" > 
+    Add new price
+</button>
+<div id="priceListTable" class="content" >
+    <br/>
+    No prices yet
+</div>
+
+
+<!--Modal log in-->
+<div class="modal fade" data-bs-keyboard="true" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" id="price-add-edit-modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Fill price fields</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row" hidden>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control price-id" onkeypress="" />
+                    </div>
+                </div>
+                <br />
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <span>Date</span>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="date" class="form-control price-date" />
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-md-4">
+                        <span>Price class</span>
+                    </div>
+                    <div class="col-md-8">
+                         <span>
+                            <select class="form-select" aria-label="Default select example" id="price-class-selection-list">
+                                <option selected>Not selected</option>
+                            </select>
+                        </span>
+                    </div>
+                </div>
+                <br />
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <span>Price</span>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="number" class="form-control price-price" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="action-save btn btn-primary" data-bs-dismiss="modal" id="save-price" onclick="savePrice();">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--modal log out-->
