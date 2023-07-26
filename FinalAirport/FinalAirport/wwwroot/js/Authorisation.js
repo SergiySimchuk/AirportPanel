@@ -64,8 +64,6 @@ var loginButtonHandler = function () {
     var pass = modalBody.querySelector('.user-password').value;
     var staff = modalBody.querySelector('.user-staff').value;
 
-    
-
     var ajaxParameters = {
         url: "/Authentification/Authenticate?login=" + name + "&password=" + pass + "&itStaff=" + Boolean(staff),
         type: "POST",
@@ -129,8 +127,9 @@ var getAuthorizedUserData = function () {
     $.ajax(ajaxParameters);
 }
 
-var checkAuthorisation = function () {
+var checkAuthorisation = function (onlyPing = false) {
 
+    debugger;
     var token = localStorage.getItem("accessToken");
 
     if (!token) {
@@ -139,13 +138,15 @@ var checkAuthorisation = function () {
     }
     var ajaxParameters = {
         url: '/Authentification/PingJWTToken',
+        async: false,
         type: "Get",
         cache: false,
         beforeSend: addTokenToRequest,
         success: function (response) {
-
-            setCurrentUserName(currentUser());
-            loadStaffPageDataIfAuthorised();
+            if (!onlyPing) {
+                setCurrentUserName(currentUser());
+                loadStaffPageDataIfAuthorised();
+            }
         },
         error: function (jqXHR, textStatus, errorThrown) {
 
@@ -168,6 +169,7 @@ var updateTokens = function () {
         type: "Post",
         contentType: "application/json; charset=utf-8",
         cache: false,
+        async: false,
         data: tokens,
         success: afterAuthTokensRequest,
         error: function (jqXHR, textStatus, errorThrown) {
@@ -289,3 +291,11 @@ var registrationNewClient = function () {
 var addTokenToRequest = function (request) {
     request.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("accessToken"));
 }
+
+var beforeSendCRUD = function (request) {
+
+    debugger;
+    checkAuthorisation(true);
+    addTokenToRequest(request);        
+}
+

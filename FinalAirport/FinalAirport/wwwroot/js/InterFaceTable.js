@@ -177,7 +177,7 @@
                 url: "/Airports/GetAirports",
                 type: "GET",
                 context: this,
-                beforeSend: addTokenToRequest,
+                beforeSend: beforeSendCRUD,
                 success: function (result) {
                     this.BuildAirportsTable(result);
                     fillAirportsDropDownList(result, 'terminal-airports-selection-list');
@@ -250,7 +250,7 @@
                 url: "/Terminals/GetTerminals",
                 type: "GET",
                 context: this,
-                beforeSend: addTokenToRequest,
+                beforeSend: beforeSendCRUD,
                 success: function (result) {
                     this.buildTerminalsTable(result);
                     fillTerminalsDropDownList(result, 'gate-terminal-selection-list');
@@ -322,7 +322,7 @@
                 url: "/Gates/GetGates",
                 type: "GET",
                 context: this,
-                beforeSend: addTokenToRequest,
+                beforeSend: beforeSendCRUD,
                 success: function (result) {
                     this.buildGatesTable(result);
                 },
@@ -398,7 +398,7 @@
                 url: "/FlightStatuses/GetFlightStatuses",
                 type: "GET",
                 context: this,
-                beforeSend: addTokenToRequest,
+                beforeSend: beforeSendCRUD,
                 success: function (result) {
 
                     this.buildFlightStatusesTable(result);
@@ -475,7 +475,7 @@
                 url: "/PriceClasses/GetPriceClasses",
                 type: "GET",
                 context: this,
-                beforeSend: addTokenToRequest,
+                beforeSend: beforeSendCRUD,
                 success: function (result) {
 
                     this.buildPriceClassesTable(result);
@@ -532,7 +532,7 @@
             type: "Get",
             cache: false,
             context: this,
-            beforeSend: addTokenToRequest,
+            beforeSend: beforeSendCRUD,
             success: function (response) {
 
                 this.buildPriceListTable(response);
@@ -619,7 +619,7 @@
             type: "Get",
             cache: false,
             context: this,
-            beforeSend: addTokenToRequest,
+            beforeSend: beforeSendCRUD,
             success: function (response) {
 
                 this.buildPassengersTable(response);
@@ -682,7 +682,7 @@
             type: "Get",
             cache: false,
             context: this,
-            beforeSend: addTokenToRequest,
+            beforeSend: beforeSendCRUD,
             success: function (response) {
 
                 this.buildTicketsTable(response);

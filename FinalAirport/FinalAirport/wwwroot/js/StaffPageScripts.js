@@ -54,7 +54,7 @@ var saveUpdateAirportButtonHandler = function () {
             "city" : city,
             "country" : country
         }),
-        beforeSend: addTokenToRequest,
+        beforeSend: beforeSendCRUD,
         success: function (response) {
 
             if (!response.success) {
@@ -90,7 +90,7 @@ var removeAirport = function (id) {
         contentType: "application/json; charset=utf-8",
         cache: false,
         data: data,
-        beforeSend: addTokenToRequest,
+        beforeSend: beforeSendCRUD,
         success: function (response) {
 
             if (!response.success) {
@@ -226,7 +226,7 @@ var saveUpdateTerminalButtonHandler = function () {
         contentType: "application/json; charset=utf-8",
         cache: false,
         data: JSON.stringify(terminal),
-        beforeSend: addTokenToRequest,
+        beforeSend: beforeSendCRUD,
         success: function (response) {
 
             if (!response.success) {
@@ -262,7 +262,7 @@ var removeTerminal = function (id) {
         contentType: "application/json; charset=utf-8",
         cache: false,
         data: data,
-        beforeSend: addTokenToRequest,
+        beforeSend: beforeSendCRUD,
         success: function (response) {
 
             if (!response.success) {
@@ -342,7 +342,7 @@ var saveUpdateGateButtonHandler = function () {
         contentType: "application/json; charset=utf-8",
         cache: false,
         data: gate,
-        beforeSend: addTokenToRequest,
+        beforeSend: beforeSendCRUD,
         success: function (response) {
 
             if (!response.success) {
@@ -375,7 +375,7 @@ var removeGate = function (id) {
         contentType: "application/json; charset=utf-8",
         cache: false,
         data: data,
-        beforeSend: addTokenToRequest,
+        beforeSend: beforeSendCRUD,
         success: function (response) {
 
             if (!response.success) {
@@ -424,7 +424,7 @@ var changeTerminalsList = function (listId, airportId, selectedValue) {
         contentType: "application/json; charset=utf-8",
         cache: false,
         data: data,
-        beforeSend: addTokenToRequest,
+        beforeSend: beforeSendCRUD,
         success: function (response) {
 
            fillTerminalsDropDownList(response, listId, selectedValue);
@@ -456,7 +456,7 @@ var changeGatesList = function (listId, terminalId, selectedValue) {
         contentType: "application/json; charset=utf-8",
         cache: false,
         data: data,
-        beforeSend: addTokenToRequest,
+        beforeSend: beforeSendCRUD,
         success: function (response) {
 
             fillGatesDropDownList(response, listId, selectedValue);
@@ -532,7 +532,7 @@ var saveFlight = function () {
         contentType: "application/json; charset=utf-8",
         cache: false,
         data: flight,
-        beforeSend: addTokenToRequest,
+        beforeSend: beforeSendCRUD,
         success: function (response) {
 
             if (!response.success) {
@@ -594,7 +594,7 @@ var saveFlightStatus = function () {
         contentType: "application/json; charset=utf-8",
         cache: false,
         data: flightStatus,
-        beforeSend: addTokenToRequest,
+        beforeSend: beforeSendCRUD,
         success: function (response) {
 
             if (!response.success) {
@@ -633,7 +633,7 @@ var removeFlightStatus = function (id) {
         contentType: "application/json; charset=utf-8",
         cache: false,
         data: data,
-        beforeSend: addTokenToRequest,
+        beforeSend: beforeSendCRUD,
         success: function (response) {
 
             if (!response.success) {
@@ -740,7 +740,7 @@ var loadFlightByID = function (flightId, sucessHandler) {
         url: "/Flights/GetFlightByID?id=" + flightId,
         type: "GET",
         cache: false,
-        //beforeSend: addTokenToRequest,
+        //beforeSend: beforeSendCRUD,
         success: sucessHandler,
 
         error: function (jqXHR, textStatus, errorThrown) {
@@ -789,7 +789,7 @@ var removeFlight = function () {
         contentType: "application/json; charset=utf-8",
         cache: false,
         data: data,
-        beforeSend: addTokenToRequest,
+        beforeSend: beforeSendCRUD,
         success: function (response) {
 
             if (!response.success) {
@@ -850,7 +850,7 @@ var savePriceClass = function () {
         contentType: "application/json; charset=utf-8",
         cache: false,
         data: priceClass,
-        beforeSend: addTokenToRequest,
+        beforeSend: beforeSendCRUD,
         success: function (response) {
 
             if (!response.success) {
@@ -884,7 +884,7 @@ var removePriceClasses  = function (id) {
         contentType: "application/json; charset=utf-8",
         cache: false,
         data: data,
-        beforeSend: addTokenToRequest,
+        beforeSend: beforeSendCRUD,
         success: function (response) {
 
             if (!response.success) {
@@ -966,7 +966,7 @@ var savePrice = function () {
         contentType: "application/json; charset=utf-8",
         cache: false,
         data: price,
-        beforeSend: addTokenToRequest,
+        beforeSend: beforeSendCRUD,
         success: function (response) {
 
             if (!response.success) {
@@ -1000,7 +1000,7 @@ var removePrice = function (id) {
         contentType: "application/json; charset=utf-8",
         cache: false,
         data: data,
-        beforeSend: addTokenToRequest,
+        beforeSend: beforeSendCRUD,
         success: function (response) {
 
             if (!response.success) {
