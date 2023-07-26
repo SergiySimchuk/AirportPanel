@@ -740,7 +740,7 @@ var loadFlightByID = function (flightId, sucessHandler) {
         url: "/Flights/GetFlightByID?id=" + flightId,
         type: "GET",
         cache: false,
-        //beforeSend: beforeSendCRUD,
+        beforeSend: beforeSendCRUD,
         success: sucessHandler,
 
         error: function (jqXHR, textStatus, errorThrown) {
