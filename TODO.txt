@@ -4,4 +4,5 @@ like:  { Result,  message, Data}
 2. Possibility to create staff users, maybe super admin, or role based model... 
 3. During ticket buying show total price
 4. Show ticket history
-5. 
+5. User friendly errors info
+6. Maximum checks for wrong user behavior
