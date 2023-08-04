@@ -13,6 +13,7 @@ namespace FinalAirport.Profiles.Flights
             CreateMap<UpdateFlightCommand, Flight>();
             CreateMap<RemoveFlightCommand, Flight>();
             CreateMap<GetPriceListsByFlightCommand, Flight>();
+            CreateMap<GetPriceListsByFlightOnDateCommand, Flight>();
         }
     }
 }

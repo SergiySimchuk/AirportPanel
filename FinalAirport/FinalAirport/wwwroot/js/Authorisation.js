@@ -129,7 +129,7 @@ var getAuthorizedUserData = function () {
 
 var checkAuthorisation = function (onlyPing = false) {
 
-    debugger;
+    //debugger;
     var token = localStorage.getItem("accessToken");
 
     if (!token) {
@@ -294,7 +294,7 @@ var addTokenToRequest = function (request) {
 
 var beforeSendCRUD = function (request) {
 
-    debugger;
+    //debugger;
     checkAuthorisation(true);
     addTokenToRequest(request);        
 }

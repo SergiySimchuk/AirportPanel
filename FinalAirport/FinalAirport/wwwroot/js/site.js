@@ -124,8 +124,11 @@ var removeTicketButton = function (ticketBlockId) {
 
 var loadFlightPriceList = function (flightId) {
 
+   // let curDate = new Date().toLocaleString('ua-UA');
+   // debugger;
+
     var ajaxParameters = {
-        url: "/PriceList/GetPriceListByFlight?flightId=" + flightId,
+        url: "/PriceList/GetPriceListByFlightOnDate?flightId=" + flightId, // + "&date=" + curDate,
         type: "Get",
         cache: false,
         context: this,

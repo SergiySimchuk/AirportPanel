@@ -35,6 +35,23 @@ namespace FinalAirport.Controllers
             return Ok(result);
         }
 
+        [AllowAnonymous]
+        [HttpGet]
+        public async Task<IActionResult> GetPriceListByFlightOnDate([FromQuery] int flightId, DateTime date)
+        {
+            if (date == null || date == DateTime.MinValue)
+                date = DateTime.Now;
+
+            var command = new GetPriceListsByFlightOnDateCommand() { Id = flightId, Date = date };
+
+            var priceList = await this.mediator.Send(command);
+
+            var result = priceList.Select(priseListEntity => this.mapper.Map<PriceListDTO>(priseListEntity));
+
+            return Ok(result);
+        }
+
+
         [HttpPost]
         public async Task<IActionResult> CreateNewPrice([FromBody] PriceListDTO price)
         {
