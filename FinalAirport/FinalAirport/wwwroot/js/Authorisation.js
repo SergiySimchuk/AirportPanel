@@ -64,6 +64,13 @@ var loginButtonHandler = function () {
     var pass = modalBody.querySelector('.user-password').value;
     var staff = modalBody.querySelector('.user-staff').value;
 
+    if (pass == "") {
+        pass = '""';
+    }
+
+
+    debugger;
+
     var ajaxParameters = {
         url: "/Authentification/Authenticate?login=" + name + "&password=" + pass + "&itStaff=" + Boolean(staff),
         type: "POST",
