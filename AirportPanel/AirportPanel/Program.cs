@@ -1,9 +1,12 @@
 using AirportPanel.Bearers;
 using AirportPanel.Domain;
+using AirportPanel.EnviromentPrepare;
 using AirportPanel.Infrastructure;
+using AirportPanel.Infrastructure.Abstracts;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Configuration;
 using System.Reflection;
@@ -17,8 +20,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AirportPanelDBContext>(options => options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("AirportPanelDatabase")), ServiceLifetime.Transient);
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 builder.Services.AddInfrastructure();
+builder.Services.AddTransient<IEnviromentPreparer, EnviromentPreparer>();
 builder.Services.AddSession();
-//builder.Services.AddTransient<IJWTTokenManager, JWTTokenManager>();
+
 
 
 
@@ -45,8 +49,6 @@ builder.Services.AddAuthentication(authOptions =>
 
 builder.Services.AddTransient(typeof(IJWTTokenManager), typeof(JWTTokenManager));
 
-//builder.Services.AddTransient(typeof(IJWTTokenManager), typeof(JWTTokenManager));
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -69,4 +71,12 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=AirportPanel}/{action=Flights}");
 
+using (var serviceScope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope())
+{
+    var resultLogic = serviceScope.ServiceProvider.GetService<IEnviromentPreparer>();
+    await resultLogic.Prepare();
+}
+
 app.Run();
+
+
