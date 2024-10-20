@@ -179,10 +179,15 @@
                 context: this,
                 beforeSend: beforeSendCRUD,
                 success: function (result) {
-                    this.BuildAirportsTable(result);
+                    if (!result.success) {
+                        requestErrorHandler("Error", result.message, 'airportsTable', 'loading airports');
+                        return;
+                    }
+
+                    this.BuildAirportsTable(result.appData);
                     fillAirportsDropDownList(result, 'terminal-airports-selection-list');
-                    fillAirportsDropDownList(result, 'flight-departure-airport-selection-list');
-                    fillAirportsDropDownList(result, 'flight-arrival-airport-selection-list');
+                    fillAirportsDropDownList(result.appData, 'flight-departure-airport-selection-list');
+                    fillAirportsDropDownList(result.appData, 'flight-arrival-airport-selection-list');
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
 

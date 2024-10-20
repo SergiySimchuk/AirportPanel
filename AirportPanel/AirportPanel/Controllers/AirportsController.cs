@@ -25,7 +25,9 @@ namespace AirportPanel.Controllers
             var airports = await this.mediator.Send(new GetAirportsCommand());
             var airportsDto = airports.Select(airport => this.mapper.Map<AirportDTO>(airport));
 
-            return Ok(airportsDto);
+            var response = new ActionResponse () { Success  = true, AppData = airportsDto };
+
+            return Ok(response);
         }
 
         [HttpPost]
