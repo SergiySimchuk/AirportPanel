@@ -26,7 +26,10 @@ namespace AirportPanel.Controllers
         {
             var flights = await mediator.Send(new GetFlightsPanelCommand());
             var flightsDTO =  flights.Select(flightPanel => this.mapper.Map<FlightPanelDTO>(flightPanel));
-            return Ok(flightsDTO);
+
+            var responce = new ActionResponse { Success = true, AppData = flightsDTO };
+
+            return Ok(responce);
         }
 
         [AllowAnonymous]
@@ -39,7 +42,9 @@ namespace AirportPanel.Controllers
 
             var flightsPanelDTO = flightsPanel.Select(flightPanel => this.mapper.Map<FlightPanelDTO>(flightPanel));
 
-            return Ok(flightsPanelDTO);
+            var response = new ActionResponse { Success = true, AppData = flightsPanelDTO };
+
+            return Ok(response);
         }
 
         [HttpPost]
@@ -60,7 +65,9 @@ namespace AirportPanel.Controllers
 
             var flihtDTO = this.mapper.Map<FlightDTO>(flight);
 
-            return Ok(flihtDTO);
+            var responce = new ActionResponse { Success = true, AppData = flihtDTO };
+
+            return Ok(responce);
         }
 
         [HttpDelete]
@@ -88,7 +95,10 @@ namespace AirportPanel.Controllers
             var flightPanel = await this.mediator.Send(new GetFlightPanelByIDCommand() { Id = id });
 
             var result = this.mapper.Map<FlightPanelDTO>(flightPanel);
-            return Ok(result);
+
+            var response = new ActionResponse { Success = true, AppData = result };
+            
+            return Ok(response);
         }
     }
 }

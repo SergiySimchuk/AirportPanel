@@ -741,10 +741,17 @@ var loadFlightByID = function (flightId, sucessHandler) {
         type: "GET",
         cache: false,
         beforeSend: beforeSendCRUD,
-        success: sucessHandler,
+        success: function (result) {
+
+            if (!result.success) {
+                requestErrorHandler("Error", result.message, undefined, 'getting flight by id');
+                return;
+            }
+
+            sucessHandler(result.appData);
+        },
 
         error: function (jqXHR, textStatus, errorThrown) {
-
             requestErrorHandler(textStatus, jqXHR.status, undefined, 'getting flight by id');
         }
     };

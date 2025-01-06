@@ -160,7 +160,12 @@
 
                 success: function (result) {
 
-                    this.BuildFlightsTable(result);
+                    if (!result.success) {
+                        requestErrorHandler("Error", result.message, 'flightsTable', 'loading Flights panel');
+                        return;
+                    }
+
+                    this.BuildFlightsTable(result.appData);
                 },
 
                 error: function (jqXHR, textStatus, errorThrown) {

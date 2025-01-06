@@ -63,7 +63,15 @@ var loadFlightPanelByID = function (flightId, sucessHandler) {
         url: "/Flights/GetFlightPanelByID?id=" + flightId,
         type: "GET",
         cache: false,
-        success: sucessHandler,
+        success: function (result) {
+
+            if (!result.success) {
+                requestErrorHandler("Error", result.message, undefined, 'getting flight by id');
+                return;
+            }
+
+            sucessHandler(result.appData);
+        },
 
         error: function (jqXHR, textStatus, errorThrown) {
 
@@ -432,8 +440,13 @@ var executeSearchFlight = function () {
         data: JSON.stringify(searchConditions),
         success: function (response) {
 
+            if (!response.success) {
+                requestErrorHandler("Error", result.message, undefined, 'load flights');
+                return;
+            }
+
             let tabler = new InterFaceTable();
-            tabler.BuildFlightsTable(response);
+            tabler.BuildFlightsTable(response.appData);
         },
         error: function (jqXHR, textStatus, errorThrown) {
 
